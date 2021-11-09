@@ -236,7 +236,7 @@ class ImportCommand extends Command {
         })
         .catch((err) => {
           // Getting commit diff to see if it's empty
-          const diff = this.externalExecSync("git", ["diff", "-s", `${sha}^!`]).trim();
+          const diff = this.externalExecSync("git", ["diff", `${sha}^!`]).trim();
           if (diff === "") {
             tracker.completeWork(1);
 
